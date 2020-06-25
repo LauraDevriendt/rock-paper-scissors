@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Rock Paper Scissors</title>
+          <link href="style.css" rel="stylesheet">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    </head>
+
+    <body>
+
+    <header>
+        <h1>Rock, Paper or Scissors: the Game</h1>
+        <p>5 rounds in total, can you beat your computer?</p>
+    </header>
+
+    <section class="rules">
+        <button type="button" class="collapsible">rules</button>
+        <div class="contentRules">
+          <p>The outcome of the game is determined by 3 simple rules:<br><br>
+
+            Rock wins against scissors.
+            Scissors win against paper.
+            Paper wins against rock.
+        </p>
+        </div> 
+    </section>
+
+    <section class="game">
+        <p id="round"></p>
+        
+        <div class= "choices ">
+            <button class="btn" id="rock" ><img src="./images/rockChoice.png"  alt="rock"></button>
+            <button class="btn" id="paper" ><img src="./images/paperChoice.png" alt="paper"></button>
+            <button class="btn" id="scissors"><img src="./images/scissorsChoice.png" al="scissors"></button>
+
+        </div>
+
+        <div class="scores">
+
+            <div class="player">
+                <p id="playerScore">Player score: 0</p>
+                <i class="fas fa-star" class="star"></i>
+                <i class="fas fa-star" class="star"></i>
+                <i class="fas fa-star" class="star"></i>
+                <i class="fas fa-star" class="star"></i>
+                <i class="fas fa-star" class="star"></i>
+                <br>
+                
+            </div>
+
+
+            <div class="computer">
+                <p id="computerScore">Computer score: 0</p>
+                <i class="fas fa-star" class="star"></i>
+                <i class="fas fa-star" class="star"></i>
+                <i class="fas fa-star" class="star"></i>
+                <i class="fas fa-star" class="star"></i>
+                <i class="fas fa-star" class="star"></i>
+                <br>
+
+            </div>
+
+        </div>
+
+        <div class="images">
+            <img src="" alt="" class="player-img">
+            <img src="" alt="" class="computer-img">            
+        </div>
+
+        <p id="roundResult"></p>
+
+    </section>
+
+      <!-- pop-up by making it cover whole screen css -->
+    <div class="modal__container">
+        <div class="modal">
+            <p></p>
+            <p class="score__container">
+                <span class="score-player"></span>
+                :<span class="score-computer"></span> 
+            </p>
+            <a href="#" class="btn replay">PLAY AGAIN</a>
+        </div>
+    </div>
+    
+    
+    <script src="js.js"></script>
+
+ 
+   
+    </body>
+
+    
+</html>
