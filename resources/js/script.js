@@ -50,12 +50,12 @@ function game (){
     playerSelection = this.id; 
   //random choise of computer  
     computerSelection = computerPlay();
-  //make images appear which matches the choice of comp and player
+  //make img appear which matches the choice of comp and player
     const playImg = document.querySelector('.player-img');
-    playImg.src = `./images/${playerSelection}Choice.png`
+    playImg.src = `resources/img/${playerSelection}Choice.png`
 
     const compImg = document.querySelector('.computer-img');
-    compImg.src = `images/${computerSelection}Choice.png`
+    compImg.src = `resources/img/${computerSelection}Choice.png`
   // one play round    
 
     switch(true) {
@@ -89,32 +89,36 @@ function game (){
 
     //reset game once round 5 is finished
 
-    const modalContainer = document.querySelector('.modal__container');
-    const endResult = document.querySelector('.modal__container p');
-    const scorePlayer = document.querySelector('.modal__container .score-player');
-    const scoreComputer = document.querySelector('.modal__container .score-computer'); 
+    const modalContainer = document.querySelector('#overlay');
+    const endResult = document.querySelector('#overlay .endresult');
+    const scoring = document.querySelector('#overlay .score__container');
 
 
     if (round === 5){
        if(playerScore>computerScore ) { 
         endResult.textContent = "GAME IS OVER! YOU WON!";
-        modalContainer.style.display = 'block';
-        scorePlayer.textContent = `${playerScore}`;
-        scoreComputer.textContent = `${computerScore}`
+
+        modalContainer.style.display = "block"
+        scoring.textContent =`${playerScore}:${computerScore}`
+
         
         
       }else if (playerScore<computerScore) {
         endResult.textContent = "GAME IS OVER! COMPUTER WON!";
-        modalContainer.style.display = 'block'
-        scorePlayer.textContent = `${playerScore}`;
-        scoreComputer.textContent = `${computerScore}`
-        
-      }else {
+
+
+           modalContainer.style.display = "block"
+           scoring.textContent =`${computerScore}:${playerScore}`
+
+
+       }else {
         endResult.textContent = "It's a tie";
+
         modalContainer.style.display = 'block'
-        scorePlayer.textContent = `${playerScore}`;
-        scoreComputer.textContent = `${computerScore}`
-      }
+
+           scoring.textContent =`${playerScore}:${computerScore}`
+
+       }
 
   }
 
@@ -132,7 +136,7 @@ function game (){
     modalContainer.style.display = 'none';
   } 
 
-  document.querySelector('.modal__container .replay').addEventListener('click', reStart);
+  document.querySelector('#overlay .btnReplay').addEventListener('click', reStart);
 
     
 }
